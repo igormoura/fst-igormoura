@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonsComponent } from './pokemons.component';
-import { PokemonService } from '../pokemon.service';
+import { PokemonService } from '../../services/pokemon.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('PokemonsComponent', () => {
