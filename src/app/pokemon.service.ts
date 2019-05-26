@@ -20,23 +20,12 @@ export class PokemonService {
     );
   }
 
-  /* GET heroes whose name contains search term */
-  searchPokemons(term: string): Observable<Pokemon[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get<Pokemon[]>(`${this.pokemonsUrl}/?name=${term}`).pipe(
-      catchError(this.handleError<Pokemon[]>('searchPokemons', []))
-    );
-  }
-
-    /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
+  /**
+  * Handle Http operation that failed.
+  * Let the app continue.
+  * @param operation - name of the operation that failed
+  * @param result - optional value to return as the observable result
+  */
   private handleError<T> (operation = '', result?: T) {
     return (error: any): Observable<T> => {
 

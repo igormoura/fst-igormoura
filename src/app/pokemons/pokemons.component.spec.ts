@@ -26,4 +26,9 @@ describe('PokemonsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should search', () => {
+    expect(component.search('bul')).not.toBeNull();
+    expect(component.search('')).not.toBeNull();
+  });
 });

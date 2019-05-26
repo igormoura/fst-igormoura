@@ -15,6 +15,11 @@ describe('PokemonService', () => {
     const service: PokemonService = TestBed.get(PokemonService);
     expect(service).toBeTruthy();
   });
+
+  it('#getValue should return real value', () => {
+    const service: PokemonService = TestBed.get(PokemonService);
+    expect(service.getPokemons()).not.toBeNull();
+  });
 });
 
 
