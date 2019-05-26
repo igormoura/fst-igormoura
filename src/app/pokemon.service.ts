@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of} from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
 import { Pokemon } from './pokemon';
 
 @Injectable({
@@ -16,6 +16,7 @@ export class PokemonService {
   getPokemons(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.pokemonsUrl + '/pokemon')
     .pipe(
+      map(response => response['results']),
       catchError(this.handleError<Pokemon[]>('getPokemons', []))
     );
   }

@@ -4,9 +4,12 @@
 <section>
   <input #searchBox placeholder="Pesquise por um pokemon" (input)="search(searchBox.value)" />
   <h4>Notas</h4>
-  <ul>
+  <ul *ngIf="pokemons?.length > 0; else empty">
     <li *ngFor="let p of pokemons">
       {{p.name | titlecase}}<span>{{p.url}}</span>
     </li>
   </ul>
+  <ng-template #empty>
+    <mark>Nenhum resultado encontrado.</mark>
+  </ng-template>
 </section>

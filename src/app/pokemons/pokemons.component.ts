@@ -20,9 +20,9 @@ export class PokemonsComponent implements OnInit {
 
   getPokemons(): void {
     this.pokemonService.getPokemons()
-      .subscribe(pokemons => {
-        this.pokemons = pokemons['results'];
-        this.pokemonsDefault = Object.assign([], this.pokemons);
+      .subscribe(response => {
+        this.pokemons = response;
+        this.pokemonsDefault = Object.assign([], response);
       });
   }
 
