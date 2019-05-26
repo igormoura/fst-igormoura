@@ -3,6 +3,7 @@
 </header>
 <section>
   <input #searchBox placeholder="Pesquise por um pokemon" (input)="search(searchBox.value)" />
+  <h4>Notas</h4>
   <ul>
     <li *ngFor="let p of pokemons">
       {{p.name | titlecase}}<span>{{p.url}}</span>
